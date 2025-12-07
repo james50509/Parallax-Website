@@ -21,9 +21,9 @@
 }
 
 @keyframes bubble {
-	0% {
-		transform: translateY(0);
-		opacity: 0;
+        0% {
+                transform: translateY(0);
+                opacity: 0;
 	}
 
 	10% {
@@ -32,8 +32,25 @@
 
 	100% {
 		transform: translateY(var(--transform-y));
-		opacity: 1;
-	}
+                opacity: 1;
+        }
+}
+
+/* Animation to move fishes from bottom to top */
+@keyframes swim-up {
+        0% {
+                transform: translateY(0);
+                opacity: 0;
+        }
+
+        10% {
+                opacity: 0.8;
+        }
+
+        100% {
+                transform: translateY(-140vh);
+                opacity: 0.8;
+        }
 }
 
 /* Delay for each bubble separately (Desktop View)*/

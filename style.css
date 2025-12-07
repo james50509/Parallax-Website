@@ -226,23 +226,32 @@ section #text {
 .fishes {
     position: absolute;
     opacity: 0.8;
+    top: 100%;
+    animation: swim-up var(--swim-duration, 18s) linear infinite;
 }
 
 /* Properties for each fish and sea bed*/
 #fish1 {
-    top: 0%;
+    left: 5%;
+    --swim-duration: 17s;
 }
 
 #fish2 {
-    top: 32%;
+    left: 30%;
+    --swim-duration: 19s;
+    animation-delay: 2s;
 }
 
 #fish3 {
-    top: 60%;
+    left: 55%;
+    --swim-duration: 16s;
+    animation-delay: 4s;
 }
 
 #fish4 {
-    top: 87%;
+    left: 78%;
+    --swim-duration: 20s;
+    animation-delay: 1s;
 }
 
 #seabed {
