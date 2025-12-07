@@ -49,11 +49,18 @@ window.addEventListener('scroll', function () {
         splash.style.top = 20 + value * -0.3 + 'px';
     }
 
-    //Move fishes horizontally
-    fish1.style.right = (value - 100) * 1 + 'px';
-    fish2.style.left = (value - fish2move) * 1 + 'px';
-    fish3.style.right = (value - fish3move) * 1 + 'px';
-    fish4.style.left = (value - fish4move) * 1 + 'px';
+    // Move fishes diagonally from bottom-right toward the surface
+    const fishPaths = [
+        { element: fish1, offset: 100, xFactor: -0.35, yFactor: -0.18 },
+        { element: fish2, offset: fish2move, xFactor: -0.3, yFactor: -0.16 },
+        { element: fish3, offset: fish3move, xFactor: -0.27, yFactor: -0.14 },
+        { element: fish4, offset: fish4move, xFactor: -0.24, yFactor: -0.12 }
+    ];
+
+    fishPaths.forEach(({ element, offset, xFactor, yFactor }) => {
+        const progress = Math.max(value - offset, 0);
+        element.style.transform = `translate(${progress * xFactor}px, ${progress * yFactor}px)`;
+    });
 })
 
 
